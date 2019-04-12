@@ -1,0 +1,11 @@
+ytd-thumbnail, ytd-playlist-thumbnail, #thumbnail, #thumbnail-container, .shelf-skeleton .thumbnail {
+	display: none !important;
+}
+
+.metadata.ytd-compact-video-renderer {
+	padding-right: 0 !important;
+}
+
+.shelf-skeleton .video-skeleton {
+	margin-right: 4px;
+}

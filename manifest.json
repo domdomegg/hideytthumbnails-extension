@@ -1,0 +1,23 @@
+{
+  "name": "__MSG_extName__",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "__MSG_extDescription__",
+  "homepage_url": "https://github.com/domdomegg/hideytthumbnails-extension",
+  "icons": {
+    "48": "img/icon48.png",
+    "128": "img/icon128.png",
+    "512": "img/icon512.png"
+  },
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "css": [
+        "inject.css"
+      ]
+    }
+  ]
+}
