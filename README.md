@@ -1,0 +1,1 @@
+# hideytthumbnails-extension
