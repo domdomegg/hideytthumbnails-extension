@@ -37,9 +37,9 @@ const loadOptions = async () => {
     browser.storage.local.get(defaultOptions, resolve);
   })).syncSettings ?? defaultOptions.syncSettings;
 
-	const options = await new Promise((resolve) => {
-		browser.storage[syncSettings ? 'sync' : 'local'].get(defaultOptions, resolve);
-	})
+  const options = await new Promise((resolve) => {
+    browser.storage[syncSettings ? 'sync' : 'local'].get(defaultOptions, resolve);
+  })
 
   return { ...defaultOptions, ...options }
 }
