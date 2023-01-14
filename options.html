@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <form>
+      <p data-i18n="options_setting_storage">Setting storage</p>
+      <input type="checkbox" name="syncSettings" id="syncSettings">
+      <label for="syncSettings" data-i18n="options_sync">Sync settings across browsers</label><br />
+      <br />
+      
+      <p data-i18n="options_thumbnail_mode">Thumbnail display mode</p>
+      <input type="radio" name="thumbnailMode" id="hidden" value="hidden">
+      <label for="hidden" data-i18n="options_thumbnail_hidden">Hidden</label><br />
+      <input type="radio" name="thumbnailMode" id="hidden-except-hover" value="hidden-except-hover">
+      <label for="hidden-except-hover" data-i18n="options_thumbnail_hidden_except_hovered">Hidden (except when hovered)</label><br />
+      <input type="radio" name="thumbnailMode" id="blurred" value="blurred">
+      <label for="blurred" data-i18n="options_thumbnail_blurred">Blurred</label><br />
+      <input type="radio" name="thumbnailMode" id="normal" value="normal">
+      <label for="normal" data-i18n="options_thumbnail_normal">Normal</label><br />
+      <br />
+      
+      <p data-i18n="options_disable_extension_on">Disable extension on</p>
+      <input type="checkbox" name="disableSearchResultPage" id="disableSearchResultPage">
+      <label for="disableSearchResultPage" data-i18n="options_disable_extension_results">Search results page</label><br />
+      <input type="checkbox" name="disablePlaylistPage" id="disablePlaylistPage">
+      <label for="disablePlaylistPage" data-i18n="options_disable_extension_playlist">Playlist page</label><br />
+      <input type="checkbox" name="disableWatchPage" id="disableWatchPage">
+      <label for="disableWatchPage" data-i18n="options_disable_extension_watch">Watch page</label><br />
+      <input type="checkbox" name="disableEverywhere" id="disableEverywhere">
+      <label for="disableEverywhere" data-i18n="options_disable_extension_everywhere">Everywhere</label><br />
+      <br />
+
+      <p id="status">✅ <span data-i18n="options_loaded">Preferences loaded</span></p>
+    </form>
+    <script src="common.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

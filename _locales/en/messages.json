@@ -4,5 +4,50 @@
   },
   "extDescription": {
     "message": "Hide YouTube Thumbnails for less clickbaity browsing"
+  },
+  "options_setting_storage": {
+    "message": "Setting storage"
+  },
+  "options_sync": {
+    "message": "Sync settings across browsers"
+  },
+  "options_thumbnail_mode": {
+    "message": "Thumbnail display mode"
+  },
+  "options_thumbnail_hidden": {
+    "message": "Hidden"
+  },
+  "options_thumbnail_hidden_except_hovered": {
+    "message": "Hidden (except when hovered)"
+  },
+  "options_thumbnail_blurred": {
+    "message": "Blurred"
+  },
+  "options_thumbnail_normal": {
+    "message": "Normal"
+  },
+  "options_disable_extension_on": {
+    "message": "Disable extension on"
+  },
+  "options_disable_extension_results": {
+    "message": "Search results page"
+  },
+  "options_disable_extension_playlist": {
+    "message": "Playlist page"
+  },
+  "options_disable_extension_watch": {
+    "message": "Watch page"
+  },
+  "options_disable_extension_everywhere": {
+    "message": "Everywhere"
+  },
+  "options_loaded": {
+    "message": "Preferences loaded"
+  },
+  "options_saving": {
+    "message": "Saving..."
+  },
+  "options_saved": {
+    "message": "Saved preferences"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "__MSG_extName__",
   "version": "1.0.1",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "__MSG_extDescription__",
   "homepage_url": "https://github.com/domdomegg/hideytthumbnails-extension",
   "icons": {
@@ -15,9 +15,18 @@
       "matches": [
         "*://*.youtube.com/*"
       ],
-      "css": [
-        "inject.css"
-      ]
+      "js": [
+        "common.js",
+        "inject.js"
+      ],
+      "run_at": "document_start"
     }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "permissions": [
+    "storage"
   ]
 }
