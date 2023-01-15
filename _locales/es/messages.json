@@ -4,5 +4,50 @@
   },
   "extDescription": {
     "message": "Ocultar miniaturas de YouTube para una mejor navegación"
+  },
+  "options_setting_storage": {
+    "message": "Configuración de almacenamiento"
+  },
+  "options_sync": {
+    "message": "Sincronizar configuraciones entre navegadores"
+  },
+  "options_thumbnail_mode": {
+    "message": "Modo de visualización de miniaturas"
+  },
+  "options_thumbnail_hidden": {
+    "message": "Oculta"
+  },
+  "options_thumbnail_hidden_except_hovered": {
+    "message": "Oculta (excepto cuando se cierne)"
+  },
+  "options_thumbnail_blurred": {
+    "message": "Borrosa"
+  },
+  "options_thumbnail_normal": {
+    "message": "Normal"
+  },
+  "options_disable_extension_on": {
+    "message": "Deshabilitar extensión en"
+  },
+  "options_disable_extension_results": {
+    "message": "Página de resultados de búsqueda"
+  },
+  "options_disable_extension_playlist": {
+    "message": "Página de lista de reproducción"
+  },
+  "options_disable_extension_watch": {
+    "message": "Página de visualización"
+  },
+  "options_disable_extension_everywhere": {
+    "message": "En todas partes"
+  },
+  "options_loaded": {
+    "message": "Preferencias cargadas"
+  },
+  "options_saving": {
+    "message": "Guardando..."
+  },
+  "options_saved": {
+    "message": "Preferencias guardadas"
   }
 }
