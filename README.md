@@ -14,3 +14,20 @@ Install this extension at:
 2. Go to `chrome://extensions`
 3. Enable `Developer mode` in the top right
 4. Click `Load unpacked`, and select the cloned folder
+
+## 🚀 Releasing new versions
+
+Common: 
+
+1. Bump version in `manifest.json`
+2. Run `./package.sh`
+
+### Google
+
+1. Go to [the extension in the Chrome Web Store developer dashboard](https://chrome.google.com/webstore/devconsole/6c72c8b9-8c99-4353-8a18-109703f24c82/phmcfcbljjdlomoipaffekhgfnpndbef/edit/package)
+2. Click 'Upload new package', and select `package.zip`
+
+### Mozilla Firefox
+
+1. Go to [the extension in the Firefox Add-on Developer Hub](https://addons.mozilla.org/en-GB/developers/addon/hide-youtube-thumbnails/versions/submit/)
+2. Click 'Submit a New Version', and select `package.zip`

@@ -1,9 +1,14 @@
 {
-  "name": "__MSG_extName__",
-  "version": "1.0.1",
   "manifest_version": 3,
+  "version": "2.0.0",
+  "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "homepage_url": "https://github.com/domdomegg/hideytthumbnails-extension",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{17c4514d-71fa-4633-8c07-1fe0b354c885}"
+    }
+  },
   "icons": {
     "48": "img/icon48.png",
     "128": "img/icon128.png",
