@@ -3,8 +3,15 @@
 const css = {
   "normal": "/* Nothing to do */",
   "hidden": `
-ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper {
+ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image {
   display: none !important;
+}
+ytm-reel-shelf-renderer .reel-shelf-items>* {
+  height: auto !important;
+  align-items: flex-start !important;
+}
+ytm-reel-item-renderer .reel-item-metadata {
+  position: static !important;
 }`,
   "hidden-except-hover": `
 ytd-thumbnail {
@@ -32,7 +39,7 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 .ytd-playlist-header-renderer.thumbnail-wrapper {
   display: none !important;
 }`,
-  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img {
+  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img {
   filter: blur(16px);
 }`,
 }
