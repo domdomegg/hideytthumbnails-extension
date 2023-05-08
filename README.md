@@ -31,3 +31,8 @@ Common:
 
 1. Go to [the extension in the Firefox Add-on Developer Hub](https://addons.mozilla.org/en-GB/developers/addon/hide-youtube-thumbnails/versions/submit/)
 2. Click 'Submit a New Version', and select `package.zip`
+
+### Microsoft Edge
+
+1. Go to [the extension in the Microsoft Partner Center for Edge](https://partner.microsoft.com/en-us/dashboard/microsoftedge/d245c788-c342-4166-bd7e-a5f3d9c32ff1/packages/dashboard)
+2. Click 'Update', 'Replace', and select `package.zip`
