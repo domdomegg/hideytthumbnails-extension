@@ -1,5 +1,7 @@
+/** @typedef {import("./common")} */
+
 document.addEventListener('DOMContentLoaded', async () => {
-  // Localise page
+  // Localize page
   document.querySelectorAll('[data-i18n]').forEach(elem => {
     const translated = browser.i18n.getMessage(elem.dataset.i18n);
     if (translated) {
@@ -33,7 +35,7 @@ document.forms[0].addEventListener('change', async () => {
     },
   })
 
-  // Artifical delay, so the 'saving' message actually appears
+  // Artificial delay, so the 'saving' message actually appears
   await new Promise(resolve => setTimeout(resolve, 200))
 
   status.textContent = `✅ ${browser.i18n.getMessage('options_saved')}`;
