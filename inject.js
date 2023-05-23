@@ -42,7 +42,11 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
   "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img {
   filter: blur(16px);
 }`,
-}
+  "solid-color": `
+.yt-core-image {
+  display: none !important;
+}`,
+};
 
 const elem = document.createElement("style");
 document.documentElement.appendChild(elem);

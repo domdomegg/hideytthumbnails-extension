@@ -7,7 +7,7 @@ if (typeof globalThis.browser === "undefined") {
 /**
  * @typedef {{
  *   syncSettings: boolean,
- *   thumbnailMode: 'hidden' | 'hidden-except-hover' | 'blurred' | 'normal',
+ *   thumbnailMode: 'hidden' | 'hidden-except-hover' | 'blurred' | 'normal' | 'solid-color',
  *   disabledOnPages: {
  *     results: boolean,
  *     playlist: boolean,
