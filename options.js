@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.forms[0].disableSearchResultPage.checked = options.disabledOnPages.results;
   document.forms[0].disablePlaylistPage.checked = options.disabledOnPages.playlist;
   document.forms[0].disableWatchPage.checked = options.disabledOnPages.watch;
+  document.forms[0].disableSubscriptionsPage.checked = options.disabledOnPages.subscriptions;
   document.forms[0].disableEverywhere.checked = options.disabledOnPages.everywhere;
 });
 
@@ -31,6 +32,7 @@ document.forms[0].addEventListener('change', async () => {
       results: document.forms[0].disableSearchResultPage.checked,
       playlist: document.forms[0].disablePlaylistPage.checked,
       watch: document.forms[0].disableWatchPage.checked,
+      subscriptions: document.forms[0].disableSubscriptionsPage.checked,
       everywhere: document.forms[0].disableEverywhere.checked,
     },
   })

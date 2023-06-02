@@ -12,6 +12,7 @@ if (typeof globalThis.browser === "undefined") {
  *     results: boolean,
  *     playlist: boolean,
  *     watch: boolean,
+ *     subscriptions: boolean,
  *     everywhere: boolean,
  *   },
  * }} Options
@@ -23,6 +24,7 @@ const defaultOptions = {
     results: false,
     playlist: false,
     watch: false,
+    subscriptions: false,
     everywhere: false,
   },
   thumbnailMode: 'hidden',
