@@ -60,5 +60,20 @@ const updateElem = async () => {
   ${css[isDisabled ? 'normal' : options.thumbnailMode]}`
 }
 
+// Update when settings are changed
 browser.storage.onChanged.addListener(updateElem)
+
+// Update when moving page
+// Also see https://github.com/domdomegg/hideytthumbnails-extension/issues/17
+// In future we should use the Navigation API when it's supported in Firefox
+// https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API
+let lastPathname = window.location.pathname;
+setInterval(() => {
+  if (lastPathname !== window.location.pathname) {
+    lastPathname = window.location.pathname
+    updateElem();
+  }
+}, 200);
+
+// Initialize on load
 updateElem()
