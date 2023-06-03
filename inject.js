@@ -53,7 +53,8 @@ const updateElem = async () => {
   const isDisabled = options.disabledOnPages.everywhere
     || (options.disabledOnPages.results && window.location.pathname === '/results')
     || (options.disabledOnPages.playlist && window.location.pathname === '/playlist')
-    || (options.disabledOnPages.watch && window.location.pathname === '/watch');
+    || (options.disabledOnPages.watch && window.location.pathname === '/watch')
+    || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');
 
   elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
   ${css[isDisabled ? 'normal' : options.thumbnailMode]}`

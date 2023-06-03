@@ -38,6 +38,9 @@
   "options_disable_extension_watch": {
     "message": "Watch page"
   },
+  "options_disable_extension_subscriptions": {
+    "message": "Subscriptions page"
+  },
   "options_disable_extension_everywhere": {
     "message": "Everywhere"
   },
