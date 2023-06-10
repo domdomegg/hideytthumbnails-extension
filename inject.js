@@ -45,7 +45,18 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
   "solid-color": `
 .yt-core-image {
   display: none !important;
-}`,
+  background-color: var(--yt-spec-additive-background);
+}
+
+ytd-thumbnail.style-scope.ytd-compact-video-renderer {
+  background-color: var(--yt-spec-additive-background);
+  border-radius: 1rem;
+}
+
+ytd-thumbnail #thumbnail.ytd-thumbnail {
+  background-color: var(--yt-spec-additive-background);
+}
+`,
 };
 
 const elem = document.createElement("style");
