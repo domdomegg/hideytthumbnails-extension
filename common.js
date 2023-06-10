@@ -28,6 +28,11 @@ const defaultOptions = {
     everywhere: false,
   },
   thumbnailMode: 'hidden',
+  workMode: {
+    enabled: false,
+    startTime: "09:00",
+    endTime: "17:00",
+  },
 }
 
 /**

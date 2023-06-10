@@ -47,6 +47,22 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 const elem = document.createElement("style");
 document.documentElement.appendChild(elem);
 
+const IsItWorkTime = (startTime, endTime)=>{
+  currentDate = new Date();
+
+  startDate = new Date(currentDate.getTime());
+  startDate.setHours(startTime.split(":")[0]);
+  startDate.setMinutes(startTime.split(":")[1]);
+  startDate.setSeconds(0);
+
+  endDate = new Date(currentDate.getTime());
+  endDate.setHours(endTime.split(":")[0]);
+  endDate.setMinutes(endTime.split(":")[1]);
+  endDate.setSeconds(0);
+
+  return currentDate > startDate && currentDate < endDate;
+}
+
 const updateElem = async () => {
   const options = await loadOptions()
 
@@ -56,8 +72,20 @@ const updateElem = async () => {
     || (options.disabledOnPages.watch && window.location.pathname === '/watch')
     || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');
 
-  elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
-  ${css[isDisabled ? 'normal' : options.thumbnailMode]}`
+  if(options.workMode.enabled){
+
+    if(IsItWorkTime(options.workMode.startTime, options.workMode.endTime)){
+      elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
+      ${css[options.thumbnailMode]}`
+    }else{
+      elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
+      ${css["normal"]}`
+    }
+  }else{
+    elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
+    ${css[isDisabled ? 'normal' : options.thumbnailMode]}`
+  }
+
 }
 
 // Update when settings are changed
