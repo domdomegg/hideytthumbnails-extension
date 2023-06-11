@@ -55,8 +55,7 @@ ytd-thumbnail.style-scope.ytd-compact-video-renderer {
 
 ytd-thumbnail #thumbnail.ytd-thumbnail {
   background-color: var(--yt-spec-additive-background);
-}
-`,
+}`,
 };
 
 const elem = document.createElement("style");
