@@ -68,11 +68,27 @@ const updateElem = async () => {
   const isDisabled = options.disabledOnPages.everywhere
     || (options.disabledOnPages.results && window.location.pathname === '/results')
     || (options.disabledOnPages.playlist && window.location.pathname === '/playlist')
-    || (options.disabledOnPages.watch && window.location.pathname === '/watch');
+    || (options.disabledOnPages.watch && window.location.pathname === '/watch')
+    || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');
 
   elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
   ${css[isDisabled ? 'normal' : options.thumbnailMode]}`
 }
 
+// Update when settings are changed
 browser.storage.onChanged.addListener(updateElem)
+
+// Update when moving page
+// Also see https://github.com/domdomegg/hideytthumbnails-extension/issues/17
+// In future we should use the Navigation API when it's supported in Firefox
+// https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API
+let lastPathname = window.location.pathname;
+setInterval(() => {
+  if (lastPathname !== window.location.pathname) {
+    lastPathname = window.location.pathname
+    updateElem();
+  }
+}, 200);
+
+// Initialize on load
 updateElem()
