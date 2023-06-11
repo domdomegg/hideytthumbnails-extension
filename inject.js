@@ -42,7 +42,21 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
   "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img {
   filter: blur(16px);
 }`,
+  "solid-color": `
+.yt-core-image {
+  display: none !important;
+  background-color: var(--yt-spec-additive-background);
 }
+
+ytd-thumbnail.style-scope.ytd-compact-video-renderer {
+  background-color: var(--yt-spec-additive-background);
+  border-radius: 1rem;
+}
+
+ytd-thumbnail #thumbnail.ytd-thumbnail {
+  background-color: var(--yt-spec-additive-background);
+}`,
+};
 
 const elem = document.createElement("style");
 document.documentElement.appendChild(elem);

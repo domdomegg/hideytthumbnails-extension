@@ -23,6 +23,9 @@
   "options_thumbnail_blurred": {
     "message": "Blurred"
   },
+  "options_thumbnail_solid_color": {
+    "message": "Solid color"
+  },
   "options_thumbnail_normal": {
     "message": "Normal"
   },

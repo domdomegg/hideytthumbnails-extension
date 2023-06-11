@@ -7,7 +7,7 @@ if (typeof globalThis.browser === "undefined") {
 /**
  * @typedef {{
  *   syncSettings: boolean,
- *   thumbnailMode: 'hidden' | 'hidden-except-hover' | 'blurred' | 'normal',
+ *   thumbnailMode: 'hidden' | 'hidden-except-hover' | 'blurred' | 'solid-color' | 'normal',
  *   disabledOnPages: {
  *     results: boolean,
  *     playlist: boolean,
@@ -18,6 +18,7 @@ if (typeof globalThis.browser === "undefined") {
  * }} Options
  */
 
+/** @type {Options} */
 const defaultOptions = {
   syncSettings: true,
   disabledOnPages: {
