@@ -3,7 +3,7 @@
 const css = {
   "normal": "/* Nothing to do */",
   "hidden": `
-ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image {
+ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image, .ytp-videowall-still-image {
   display: none !important;
 }
 ytm-reel-shelf-renderer .reel-shelf-items>* {
@@ -12,6 +12,9 @@ ytm-reel-shelf-renderer .reel-shelf-items>* {
 }
 ytm-reel-item-renderer .reel-item-metadata {
   position: static !important;
+}
+.ytp-videowall-still-info-content {
+  opacity: 1 !important;
 }`,
   "hidden-except-hover": `
 ytd-thumbnail {
@@ -36,10 +39,15 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 
 .ytd-ghost-grid-renderer.rich-thumbnail,
 .skeleton-bg-color.rich-thumbnail,
-.ytd-playlist-header-renderer.thumbnail-wrapper {
+.ytd-playlist-header-renderer.thumbnail-wrapper,
+.ytp-videowall-still:not(:hover) .ytp-videowall-still-image {
   display: none !important;
+}
+
+.ytp-videowall-still-info-content {
+  opacity: 1 !important;
 }`,
-  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img {
+  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image {
   filter: blur(16px);
 }`,
   "solid-color": `
@@ -55,6 +63,14 @@ ytd-thumbnail.style-scope.ytd-compact-video-renderer {
 
 ytd-thumbnail #thumbnail.ytd-thumbnail {
   background-color: var(--yt-spec-additive-background);
+}
+
+.ytp-videowall-still-image {
+  background-color: var(--yt-spec-static-overlay-filled-hover);
+  background-image: none !important;
+}
+.ytp-videowall-still-info-content {
+  opacity: 1 !important;
 }`,
 };
 
