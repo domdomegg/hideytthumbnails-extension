@@ -3,7 +3,7 @@
 const css = {
   "normal": "/* Nothing to do */",
   "hidden": `
-ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image, .ytp-videowall-still-image {
+ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, #thumbnail, #video-preview, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image, .ytp-videowall-still-image {
   display: none !important;
 }
 ytm-reel-shelf-renderer .reel-shelf-items>* {
@@ -27,20 +27,21 @@ ytd-thumbnail {
 ytd-rich-item-renderer:not(:hover) ytd-thumbnail,
 ytd-grid-video-renderer:not(:hover) ytd-thumbnail,
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail {
-  max-height: 0px;
-  min-height: 0px;
+  max-height: 0px !important;
+  min-height: 0px !important;
 }
 
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 .ytd-item-section-renderer:not(:hover) ytd-thumbnail {
-  max-width: 0px;
-  min-width: 0px;
+  max-width: 0px !important;
+  min-width: 0px !important;
 }
 
 .ytd-ghost-grid-renderer.rich-thumbnail,
 .skeleton-bg-color.rich-thumbnail,
 .ytd-playlist-header-renderer.thumbnail-wrapper,
-.ytp-videowall-still:not(:hover) .ytp-videowall-still-image {
+.ytp-videowall-still:not(:hover) .ytp-videowall-still-image,
+#video-preview {
   display: none !important;
 }
 
