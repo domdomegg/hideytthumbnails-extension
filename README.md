@@ -7,6 +7,7 @@ A simple browser extension which removes thumbnails from YouTube, for less click
 Install this extension at:
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/hide-youtube-thumbnails/phmcfcbljjdlomoipaffekhgfnpndbef)
 - [Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/hide-youtube-thumbnails/)
+- [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/hide-youtube-thumbnails/ocgbpppgeepjkmpeahegapfmiefdjcdk)
 
 ## 👷 Manual install
 
