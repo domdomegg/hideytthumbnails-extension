@@ -7,7 +7,8 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "{17c4514d-71fa-4633-8c07-1fe0b354c885}"
-    }
+    },
+    "gecko_android": {}
   },
   "icons": {
     "48": "img/icon48.png",
