@@ -10,6 +10,7 @@ if (typeof globalThis.browser === "undefined") {
  *   thumbnailMode: 'hidden' | 'hidden-except-hover' | 'blurred' | 'solid-color' | 'normal',
  *   disabledOnPages: {
  *     results: boolean,
+ *     youtuber: boolean,
  *     playlist: boolean,
  *     watch: boolean,
  *     subscriptions: boolean,
@@ -23,6 +24,7 @@ const defaultOptions = {
   syncSettings: true,
   disabledOnPages: {
     results: false,
+    youtuber: false,
     playlist: false,
     watch: false,
     subscriptions: false,

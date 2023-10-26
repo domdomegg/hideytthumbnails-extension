@@ -83,6 +83,7 @@ const updateElem = async () => {
 
   const isDisabled = options.disabledOnPages.everywhere
     || (options.disabledOnPages.results && window.location.pathname === '/results')
+    || (options.disabledOnPages.youtuber && window.location.pathname.startsWith('/@'))
     || (options.disabledOnPages.playlist && window.location.pathname === '/playlist')
     || (options.disabledOnPages.watch && window.location.pathname === '/watch')
     || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');

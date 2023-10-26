@@ -35,6 +35,9 @@
   "options_disable_extension_results": {
     "message": "Página de resultados de búsqueda"
   },
+  "options_disable_extension_youtuber": {
+   "message": "Página de youtuber"
+  },
   "options_disable_extension_playlist": {
     "message": "Página de lista de reproducción"
   },
