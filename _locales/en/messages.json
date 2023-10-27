@@ -35,8 +35,8 @@
   "options_disable_extension_results": {
     "message": "Search results page"
   },
-  "options_disable_extension_youtuber": {
-   "message": "Youtuber's page"
+  "options_disable_extension_Channel": {
+   "message": "Channel's page"
   },
   "options_disable_extension_playlist": {
     "message": "Playlist page"

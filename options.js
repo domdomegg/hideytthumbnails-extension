@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.forms[0].syncSettings.checked = options.syncSettings;
   document.forms[0].thumbnailMode.value = options.thumbnailMode;
   document.forms[0].disableSearchResultPage.checked = options.disabledOnPages.results;
-  document.forms[0].disableYoutuberVideoPage.checked = options.disabledOnPages.youtuber;
+  document.forms[0].disableChannelPage.checked = options.disabledOnPages.channel;
   document.forms[0].disablePlaylistPage.checked = options.disabledOnPages.playlist;
   document.forms[0].disableWatchPage.checked = options.disabledOnPages.watch;
   document.forms[0].disableSubscriptionsPage.checked = options.disabledOnPages.subscriptions;
@@ -31,7 +31,7 @@ document.forms[0].addEventListener('change', async () => {
     thumbnailMode: document.forms[0].thumbnailMode.value,
     disabledOnPages: {
       results: document.forms[0].disableSearchResultPage.checked,
-      youtuber: document.forms[0].disableYoutuberVideoPage.checked,
+      channel: document.forms[0].disableChannelPage.checked,
       playlist: document.forms[0].disablePlaylistPage.checked,
       watch: document.forms[0].disableWatchPage.checked,
       subscriptions: document.forms[0].disableSubscriptionsPage.checked,
