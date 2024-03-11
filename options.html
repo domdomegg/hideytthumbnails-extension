@@ -40,6 +40,16 @@
       <label for="disableEverywhere" data-i18n="options_disable_extension_everywhere">Everywhere</label><br />
       <br />
 
+      <p data-i18n="options_work_mode">Work Mode</p>
+      <p data-i18n="options_work_mode_description">Only hide thumbnails during a set time of the day</p>
+      <input type="checkbox" name="enableWorkMode" id="enableWorkMode">
+      <label for="enableWorkMode" data-i18n="options_enable_work_mode">Enabled</label><br />
+      <label for="workModeStart">Start date:</label>
+      <input type="time" id="workModeStart" name="workModeStart" >
+
+      <label for="workModeEnd">End date:</label>
+      <input type="time" id="workModeEnd" name="workModeEnd" >
+
       <p id="status">✅ <span data-i18n="options_loaded">Preferences loaded</span></p>
     </form>
     <script src="common.js"></script>
