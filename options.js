@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Load existing settings
   const options = await loadOptions();
   document.forms[0].syncSettings.checked = options.syncSettings;
-  document.forms[0].thumbnailMode.value = options.thumbnailMode;
+  document.forms[0].thumbnailMode.value = options.thumbnailMode || 'blurred-except-hover';
   document.forms[0].disableSearchResultPage.checked = options.disabledOnPages.results;
   document.forms[0].disableChannelPage.checked = options.disabledOnPages.channel;
   document.forms[0].disablePlaylistPage.checked = options.disabledOnPages.playlist;

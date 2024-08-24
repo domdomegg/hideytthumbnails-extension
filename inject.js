@@ -51,6 +51,13 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
   "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image {
   filter: blur(16px);
 }`,
+  "blurred-except-hover": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image {
+  filter: blur(16px);
+  transition: filter 0.3s ease-in-out;
+}
+ytd-thumbnail:hover img, ytd-playlist-thumbnail:hover img, .video-thumbnail-img:hover, .ytp-videowall-still-image:hover {
+  filter: none;
+}`,
   "solid-color": `
 .yt-core-image {
   display: none !important;
