@@ -1,6 +1,7 @@
-# hideytthumbnails-extension
+# hideytthumbnails-extension With Blurred Thumbnails On Hover!
 
-A simple browser extension which removes thumbnails from YouTube, for less clickbaity browsing.
+Blurred on hover option now exists however you need to go to your Youtube settings and disable video previews in 
+the 'Playback And Performance' section for it to work.
 
 ## ✨ Automatic install
 

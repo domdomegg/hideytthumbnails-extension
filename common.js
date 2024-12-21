@@ -30,7 +30,7 @@ const defaultOptions = {
     subscriptions: false,
     everywhere: false,
   },
-  thumbnailMode: 'hidden',
+  thumbnailMode: 'blurred-except-hover',
 }
 
 /**
