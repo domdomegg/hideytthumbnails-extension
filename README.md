@@ -21,7 +21,7 @@ Install this extension at:
 Common: 
 
 1. Bump version in `manifest.json`
-2. Run `./package.sh`
+2. Run `./package.sh` to generate `package.zip` (or check the GitHub actions build artifacts)
 
 ### Google
 
