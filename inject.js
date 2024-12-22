@@ -3,7 +3,7 @@
 const css = {
   "normal": "/* Nothing to do */",
   "hidden": `
-ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, #thumbnail, #video-preview, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image, .ytp-videowall-still-image, .shortsLockupViewModelHostThumbnailContainer {
+ytd-thumbnail, ytd-playlist-thumbnail, .rich-thumbnail, .ytd-playlist-header-renderer.thumbnail-wrapper, #thumbnail, #video-preview, ytm-media-item .media-item-thumbnail-container, ytm-reel-item-renderer .video-thumbnail-container-vertical, ytm-playlist-video-renderer .compact-media-item-image, .ytp-videowall-still-image, .shortsLockupViewModelHostThumbnailContainer, .yt-lockup-view-model-wiz__content-image, #thumbnail-container, #text-image-container, .page-header-view-model-wiz__page-header-headline-image-hero-container, .yt-mini-game-card-view-model__thumbnail-wrapper, .ytd-display-ad-renderer #media-container {
   display: none !important;
 }
 ytm-reel-shelf-renderer .reel-shelf-items>* {
@@ -17,7 +17,7 @@ ytm-reel-item-renderer .reel-item-metadata {
   opacity: 1 !important;
 }`,
   "hidden-except-hover": `
-ytd-thumbnail {
+ytd-thumbnail, .yt-lockup-view-model-wiz__content-image {
   transition: 0.25s ease-in all;
   overflow: hidden;
   max-height: 400px;
@@ -26,9 +26,11 @@ ytd-thumbnail {
 
 ytd-rich-item-renderer:not(:hover) ytd-thumbnail,
 ytd-grid-video-renderer:not(:hover) ytd-thumbnail,
-ytd-playlist-video-renderer:not(:hover) ytd-thumbnail {
+ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
+ytd-rich-item-renderer:not(:hover) .yt-lockup-view-model-wiz__content-image {
   max-height: 0px !important;
   min-height: 0px !important;
+  opacity: 0 !important;
 }
 
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
@@ -48,11 +50,11 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 .ytp-videowall-still-info-content {
   opacity: 1 !important;
 }`,
-  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image {
+  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image, .yt-core-image, yt-img-shadow #img {
   filter: blur(16px);
 }`,
   "solid-color": `
-.yt-core-image {
+.yt-core-image, .yt-thumbnail-view-model__image {
   display: none !important;
   background-color: var(--yt-spec-additive-background);
 }
