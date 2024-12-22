@@ -13,8 +13,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Package
         run: ./package.sh
+      # This unzipping is necessary as a workaround for https://github.com/actions/upload-artifact/issues/39
+      - name: Prepare artifact
+        run: |
+          mkdir .github/tmp
+          unzip package.zip -d .github/tmp
       - name: Publish artifact
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: package.zip
+          path: .github/tmp/*
