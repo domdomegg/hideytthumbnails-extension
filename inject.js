@@ -50,7 +50,7 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 .ytp-videowall-still-info-content {
   opacity: 1 !important;
 }`,
-  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image, .yt-core-image, yt-img-shadow #img {
+  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image, ytm-shorts-lockup-view-model .yt-core-image, yt-img-shadow #img {
   filter: blur(16px);
 }`,
   "solid-color": `
