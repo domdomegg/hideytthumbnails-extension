@@ -27,6 +27,7 @@ ytd-thumbnail, .yt-lockup-view-model-wiz__content-image {
 ytd-rich-item-renderer:not(:hover) ytd-thumbnail,
 ytd-grid-video-renderer:not(:hover) ytd-thumbnail,
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
+ytm-shorts-lockup-view-model .yt-core-image,
 ytd-rich-item-renderer:not(:hover) .yt-lockup-view-model-wiz__content-image {
   max-height: 0px !important;
   min-height: 0px !important;
