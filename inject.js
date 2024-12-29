@@ -27,7 +27,7 @@ ytd-thumbnail, .yt-lockup-view-model-wiz__content-image {
 ytd-rich-item-renderer:not(:hover) ytd-thumbnail,
 ytd-grid-video-renderer:not(:hover) ytd-thumbnail,
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
-ytm-shorts-lockup-view-model .yt-core-image,
+ytm-shorts-lockup-view-model:not(:hover) .yt-core-image, 
 ytd-rich-item-renderer:not(:hover) .yt-lockup-view-model-wiz__content-image {
   max-height: 0px !important;
   min-height: 0px !important;
@@ -67,6 +67,12 @@ ytd-thumbnail.style-scope.ytd-compact-video-renderer {
 
 ytd-thumbnail #thumbnail.ytd-thumbnail {
   background-color: var(--yt-spec-additive-background);
+}
+
+ytm-shorts-lockup-view-model:hover .yt-core-image { 
+  opacity: 1 !important;
+  max-height: 400px !important;
+  max-width: 360px !important;
 }
 
 .ytp-videowall-still-image {
