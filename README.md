@@ -2,6 +2,8 @@
 
 A simple browser extension which removes thumbnails from YouTube, for less clickbaity browsing.
 
+![Screenshot of the extension in action](./img/window-screenshot.png)
+
 ## ✨ Automatic install
 
 Install this extension at:
