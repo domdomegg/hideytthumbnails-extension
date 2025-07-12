@@ -91,7 +91,7 @@ ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
   opacity: 1 !important;
 }`,
   "hide-avatar": `
-#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart, tp-yt-paper-item > yt-img-shadow img {
+#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart, tp-yt-paper-item > yt-img-shadow img, ytm-channel-thumbnail-with-link-renderer {
   display: none !important;
 }`
 };
@@ -140,7 +140,7 @@ let titleObserver = null;
 const normalizeTitles = (format, options) => {
   const { removeEmojis } = options || {};
 
-  document.addEventListener('DOMContentLoaded', () => {
+  const setupObserver = () => {
     if (titleObserver) {
       titleObserver.disconnect();
     }
@@ -182,7 +182,14 @@ const normalizeTitles = (format, options) => {
       childList: true,
       subtree: true
     });
-  })
+  };
+
+  // If the document is still loading, wait for it to be ready before setting up the observer
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupObserver);
+  } else {
+    setupObserver();
+  }
 };
 
 const updateElem = async () => {
