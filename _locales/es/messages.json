@@ -36,7 +36,7 @@
     "message": "Página de resultados de búsqueda"
   },
   "options_disable_extension_channel": {
-   "message": "Página de canal"
+    "message": "Página de canal"
   },
   "options_disable_extension_playlist": {
     "message": "Página de lista de reproducción"
@@ -67,5 +67,23 @@
   },
   "options_avatar_hidden": {
     "message": "Oculto"
+  },
+  "options_title_format": {
+    "message": "Formato del título del video"
+  },
+  "options_title_format_normal": {
+    "message": "Normal"
+  },
+  "options_title_format_titlecase": {
+    "message": "Mayúsculas Iniciales"
+  },
+  "options_title_format_lowercase": {
+    "message": "minúsculas"
+  },
+  "options_title_format_uppercase": {
+    "message": "MAYÚSCULAS"
+  },
+  "options_title_format_sentencecase": {
+    "message": "Frase"
   }
 }

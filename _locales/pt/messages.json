@@ -67,5 +67,23 @@
   },
   "options_avatar_hidden": {
     "message": "Oculto"
+  },
+  "options_title_format": {
+    "message": "Formato do título do vídeo"
+  },
+  "options_title_format_normal": {
+    "message": "Normal"
+  },
+  "options_title_format_titlecase": {
+    "message": "Primeira Maiúscula"
+  },
+  "options_title_format_lowercase": {
+    "message": "minúsculas"
+  },
+  "options_title_format_uppercase": {
+    "message": "MAIÚSCULAS"
+  },
+  "options_title_format_sentencecase": {
+    "message": "Frase"
   }
 }

@@ -17,6 +17,7 @@ if (typeof globalThis.browser === "undefined") {
  *     everywhere: boolean,
  *   },
  *   avatarMode: 'normal' | 'hidden',
+ *   titleFormat: 'normal' | 'titlecase' | 'lowercase' | 'uppercase' | 'sentencecase',
  * }} Options
  */
 
@@ -33,6 +34,7 @@ const defaultOptions = {
   },
   thumbnailMode: 'hidden',
   avatarMode: 'normal',
+  titleFormat: 'normal',
 }
 
 /**

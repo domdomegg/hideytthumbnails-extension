@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.forms[0].disableSubscriptionsPage.checked = options.disabledOnPages.subscriptions;
   document.forms[0].disableEverywhere.checked = options.disabledOnPages.everywhere;
   document.forms[0].avatarMode.value = options.avatarMode ?? 'normal';
+  document.forms[0].titleFormat.value = options.titleFormat ?? 'normal';
 });
 
 // Save on change
@@ -39,6 +40,7 @@ document.forms[0].addEventListener('change', async () => {
       everywhere: document.forms[0].disableEverywhere.checked,
     },
     avatarMode: document.forms[0].avatarMode.value,
+    titleFormat: document.forms[0].titleFormat.value,
   })
 
   // Artificial delay, so the 'saving' message actually appears

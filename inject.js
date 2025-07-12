@@ -91,13 +91,80 @@ ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
   opacity: 1 !important;
 }`,
   "hide-avatar": `
-#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart {
+#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart, tp-yt-paper-item > yt-img-shadow img {
   display: none !important;
 }`
 };
 
 const elem = document.createElement("style");
 document.documentElement.appendChild(elem);
+
+/**
+ * Formats the title text based on the specified format.
+ * @param {String} text 
+ * @param {'lowercase' | 'uppercase' | 'sentencecase' | 'titlecase'} format 
+ * @returns {String}
+ */
+const applyTitleFormat = (text, format) => {
+  switch (format) {
+    case 'lowercase':
+      return text.toLowerCase();
+    case 'uppercase':
+      return text.toUpperCase();
+    case 'sentencecase':
+      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    case 'titlecase':
+      return text.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+    default:
+      return text;
+  }
+};
+
+let titleObserver = null;
+
+/**
+ * Normalizes the video titles based on the specified format.
+ * @param {'lowercase' | 'uppercase' | 'sentencecase' | 'titlecase'} format
+ */
+const normalizeTitles = (format) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (titleObserver) {
+      titleObserver.disconnect();
+    }
+
+    // Use a mutation observer to wait for new elements to be added
+    titleObserver = new MutationObserver(async () => {
+      // Selectors: thumbnail titles and suggested video titles respectively.
+      const selectors = "a#video-title-link, yt-lockup-metadata-view-model h3";
+      const foundElements = document.querySelectorAll(selectors);
+
+      if (foundElements.length > 0) {
+        foundElements.forEach(el => {
+          // The anchor in the video thumbnail and the title in the video suggestion have a title attribute containing the original text.
+          // Using this `title` attribute (which represents Youtube's internal state) instead of `textContent` to avoid issues with text synchronization.
+          const formattedText = applyTitleFormat(el.getAttribute('title'), format);
+
+          // Select the home page thumbnail title element or the video page title element.
+          // They are not present at the same time, so we can safely use either.
+          const homePageThumbnailTitleElement = el.querySelector('yt-formatted-string');
+          const videoPageTitleElement = el.querySelector('a span');
+
+          const textElement = homePageThumbnailTitleElement || videoPageTitleElement;
+
+          if (textElement && textElement.textContent !== formattedText) {
+            textElement.textContent = formattedText;
+          }
+        });
+      }
+    });
+
+    // Start observing the body for changes
+    titleObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  })
+};
 
 const updateElem = async () => {
   const options = await loadOptions()
@@ -109,13 +176,19 @@ const updateElem = async () => {
     || (options.disabledOnPages.watch && window.location.pathname === '/watch')
     || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');
 
-  elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */\n`
+  elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */\n\n`;
 
   if (!isDisabled) {
-    elem.innerHTML += `  ${css[options.thumbnailMode]}`;
+    if (options.thumbnailMode !== 'normal') {
+      elem.innerHTML += css[options.thumbnailMode];
+    }
 
     if (options.avatarMode === 'hidden') {
       elem.innerHTML += `\n${css['hide-avatar']}`;
+    }
+
+    if (options.titleFormat !== 'normal') {
+      normalizeTitles(options.titleFormat);
     }
   }
 }
