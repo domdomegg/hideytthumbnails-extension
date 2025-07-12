@@ -85,5 +85,8 @@
   },
   "options_title_format_sentencecase": {
     "message": "Frase"
+  },
+  "options_remove_emojis_from_titles": {
+    "message": "Rimuovi le emoji dai titoli dei video ❤️"
   }
 }

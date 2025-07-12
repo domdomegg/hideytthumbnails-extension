@@ -96,8 +96,14 @@ ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
 }`
 };
 
-const elem = document.createElement("style");
-document.documentElement.appendChild(elem);
+/**
+ * Removes emojis from a string.
+ * @param {String} str
+ * @returns {String}
+ */
+function getStringWithoutEmojis(str) {
+  return str.replaceAll(/(\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g, '');
+}
 
 /**
  * Formats the title text based on the specified format.
@@ -120,13 +126,20 @@ const applyTitleFormat = (text, format) => {
   }
 };
 
+const elem = document.createElement("style");
+document.documentElement.appendChild(elem);
+
 let titleObserver = null;
 
 /**
  * Normalizes the video titles based on the specified format.
  * @param {'lowercase' | 'uppercase' | 'sentencecase' | 'titlecase'} format
+ * @param {Object} options
+ * @param {boolean} [options.removeEmojis] - Whether to remove emojis from titles.
  */
-const normalizeTitles = (format) => {
+const normalizeTitles = (format, options) => {
+  const { removeEmojis } = options || {};
+
   document.addEventListener('DOMContentLoaded', () => {
     if (titleObserver) {
       titleObserver.disconnect();
@@ -142,7 +155,13 @@ const normalizeTitles = (format) => {
         foundElements.forEach(el => {
           // The anchor in the video thumbnail and the title in the video suggestion have a title attribute containing the original text.
           // Using this `title` attribute (which represents Youtube's internal state) instead of `textContent` to avoid issues with text synchronization.
-          const formattedText = applyTitleFormat(el.getAttribute('title'), format);
+          let internalTitle = el.getAttribute('title');
+
+          if (removeEmojis) {
+            internalTitle = getStringWithoutEmojis(internalTitle);
+          }
+
+          const formattedText = applyTitleFormat(internalTitle, format);
 
           // Select the home page thumbnail title element or the video page title element.
           // They are not present at the same time, so we can safely use either.
@@ -187,8 +206,8 @@ const updateElem = async () => {
       elem.innerHTML += `\n${css['hide-avatar']}`;
     }
 
-    if (options.titleFormat !== 'normal') {
-      normalizeTitles(options.titleFormat);
+    if (options.titleFormat !== 'normal' || options.removeEmojisFromTitles) {
+      normalizeTitles(options.titleFormat, { removeEmojis: options.removeEmojisFromTitles });
     }
   }
 }

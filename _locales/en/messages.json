@@ -85,5 +85,8 @@
   },
   "options_title_format_sentencecase": {
     "message": "Sentence case"
+  },
+  "options_remove_emojis_from_titles": {
+    "message": "Remove emojis from video titles ❤️"
   }
 }
