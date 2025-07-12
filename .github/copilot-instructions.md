@@ -2,17 +2,17 @@
 
 ## Overview
 
-This browser extension is designed to hide or modify the appearance of video thumbnails and related elements on YouTube. It provides users with several modes for thumbnail display (hidden, blurred, solid color, etc.) and allows fine-grained control over where the extension is active. The extension is implemented using standard WebExtension APIs and is compatible with both Firefox and Chromium-based browsers.
+This browser extension hides or modifies the appearance of video thumbnails and related elements on YouTube. It provides users with several modes for thumbnail display (hidden, blurred, solid color, etc.), fine-grained per-page controls, and options to hide additional elements such as channel avatars. The extension is implemented using standard WebExtension APIs and is compatible with both Firefox and Chromium-based browsers.
 
 ---
 
 ## File Structure and Key Components
 
 - **manifest.json**: Declares the extension's metadata, permissions, content scripts, options UI, and localization.
-- **inject.js**: The main content script that injects CSS into YouTube pages to hide or modify thumbnails based on user settings.
+- **inject.js**: The main content script that injects CSS into YouTube pages to hide or modify thumbnails and other elements based on user settings.
 - **options.html**: The options page UI, allowing users to configure how and where the extension operates.
 - **options.js**: Handles logic for loading, saving, and syncing user preferences in the options page.
-- **common.js**: (Not shown here) Expected to provide shared functions like `loadOptions()` used by both `inject.js` and `options.js`.
+- **common.js**: Provides shared functions like `loadOptions()` used by both `inject.js` and `options.js`.
 - **_locales/**: Contains translation files for internationalization.
 
 ---
@@ -24,6 +24,7 @@ This browser extension is designed to hide or modify the appearance of video thu
   - Choose how thumbnails are displayed (hidden, blurred, etc.).
   - Select which YouTube pages the extension is disabled on.
   - Enable/disable syncing settings across browsers.
+  - **Hide channel avatars** (new option).
 - Uses `data-i18n` attributes for localization.
 - Loads `common.js` and `options.js` for logic and shared functions.
 
@@ -43,6 +44,7 @@ This browser extension is designed to hide or modify the appearance of video thu
       results: document.forms[0].disableSearchResultPage.checked,
       // ...other page options...
     },
+    hideAvatars: document.forms[0].hideAvatars.checked, // new
   })
   ```
 
@@ -59,6 +61,7 @@ This browser extension is designed to hide or modify the appearance of video thu
 - Updates the injected CSS whenever:
   - The user changes settings in the options page.
   - The user navigates to a different YouTube page (using a polling interval to detect path changes).
+- **Hides channel avatars** by injecting `#avatar-container { display: none !important; }` if the `hideAvatars` option is enabled.
 
 ### Example: Injecting CSS Based on Settings
 ```js
@@ -68,8 +71,15 @@ const updateElem = async () => {
     || (options.disabledOnPages.results && window.location.pathname === '/results')
     // ...other page checks...
   elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */\n  ${css[isDisabled ? 'normal' : options.thumbnailMode]}`;
+  if (!isDisabled) {
+    if (options.avatarMode === 'hidden') {
+      elem.innerHTML += `\n${css['hide-avatar']}`;
+    }
+  }
 }
 ```
+
+- All CSS for hiding or modifying elements should be defined in the `css` object in `inject.js` and injected as needed.
 
 ---
 
@@ -78,7 +88,7 @@ const updateElem = async () => {
 - The options page UI (`options.html`) provides form controls for all user-configurable settings.
 - `options.js`:
   - Loads the current settings and updates the form fields on page load.
-  - Listens for changes to the form and saves the new settings.
+  - Listens for changes to the form and saves the new setting.
   - Provides user feedback ("saving", "saved") in the UI.
 - All settings are stored in `browser.storage.local` (and optionally `browser.storage.sync`), making them accessible to the content script (`inject.js`).
 
@@ -112,6 +122,7 @@ const updateElem = async () => {
     }
   `;
   ```
+- Or, add a new option (see below for code example).
 
 ### 3. Add More Per-Page Controls
 - Add new checkboxes to `options.html` for additional YouTube page types.
@@ -131,27 +142,32 @@ const updateElem = async () => {
 
 ---
 
-## Code Example: Adding a New Setting
-Suppose you want to add an option to hide video titles:
+## Code Example: Adding a New Setting (Hide Channel Avatars)
 
 1. **Add a checkbox to `options.html`:**
    ```html
-   <input type="checkbox" name="hideTitles" id="hideTitles">
-   <label for="hideTitles">Hide video titles</label><br />
+   <input type="checkbox" name="hideAvatars" id="hideAvatars">
+   <label for="hideAvatars" data-i18n="options_hide_avatars">Hide channel avatars</label><br />
    ```
 2. **Update `options.js` to load/save the new setting:**
    ```js
-   document.forms[0].hideTitles.checked = options.hideTitles;
+   document.forms[0].hideAvatars.checked = options.hideAvatars ?? false;
    // ...
    await saveOptions({
      // ...existing options...
-     hideTitles: document.forms[0].hideTitles.checked,
+     hideAvatars: document.forms[0].hideAvatars.checked,
    });
    ```
 3. **Update `inject.js` to apply the new setting:**
    ```js
-   if (options.hideTitles) {
-     elem.innerHTML += '\nytd-video-renderer #video-title { display: none !important; }';
+   if (options.hideAvatars) {
+     elem.innerHTML += '\n#avatar-container { display: none !important; }';
+   }
+   ```
+4. **Update `_locales/en/messages.json` and other locale files:**
+   ```json
+   "options_hide_avatars": {
+     "message": "Hide channel avatars"
    }
    ```
 

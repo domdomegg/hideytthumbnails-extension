@@ -16,6 +16,7 @@ if (typeof globalThis.browser === "undefined") {
  *     subscriptions: boolean,
  *     everywhere: boolean,
  *   },
+ *   avatarMode: 'normal' | 'hidden',
  * }} Options
  */
 
@@ -31,6 +32,7 @@ const defaultOptions = {
     everywhere: false,
   },
   thumbnailMode: 'hidden',
+  avatarMode: 'normal',
 }
 
 /**

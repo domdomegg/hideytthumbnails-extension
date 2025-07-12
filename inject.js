@@ -90,6 +90,10 @@ ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
 .ytp-videowall-still-info-content {
   opacity: 1 !important;
 }`,
+  "hide-avatar": `
+#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart {
+  display: none !important;
+}`
 };
 
 const elem = document.createElement("style");
@@ -105,8 +109,15 @@ const updateElem = async () => {
     || (options.disabledOnPages.watch && window.location.pathname === '/watch')
     || (options.disabledOnPages.subscriptions && window.location.pathname === '/feed/subscriptions');
 
-  elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */
-  ${css[isDisabled ? 'normal' : options.thumbnailMode]}`
+  elem.innerHTML = `/* Injected by the Hide YouTube Thumbnails extension */\n`
+
+  if (!isDisabled) {
+    elem.innerHTML += `  ${css[options.thumbnailMode]}`;
+
+    if (options.avatarMode === 'hidden') {
+      elem.innerHTML += `\n${css['hide-avatar']}`;
+    }
+  }
 }
 
 // Update when settings are changed

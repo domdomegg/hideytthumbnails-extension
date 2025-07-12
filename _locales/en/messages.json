@@ -58,5 +58,14 @@
   },
   "options_saved": {
     "message": "Saved preferences"
+  },
+  "options_hide_avatars": {
+    "message": "Channel avatars display"
+  },
+  "options_avatar_normal": {
+    "message": "Normal"
+  },
+  "options_avatar_hidden": {
+    "message": "Hidden"
   }
 }
