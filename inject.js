@@ -91,7 +91,7 @@ ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
   opacity: 1 !important;
 }`,
   "hide-avatar": `
-#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart, tp-yt-paper-item > yt-img-shadow img, ytm-channel-thumbnail-with-link-renderer {
+#avatar-container, yt-img-shadow#avatar, .ytd-comment-view-model #author-thumbnail-button, #creator-thumbnail, #creator-heart, tp-yt-paper-item > yt-img-shadow img, ytm-channel-thumbnail-with-link-renderer, .yt-lockup-metadata-view-model-wiz__avatar {
   display: none !important;
 }`
 };
