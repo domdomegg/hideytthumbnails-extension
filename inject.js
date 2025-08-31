@@ -17,24 +17,27 @@ ytm-reel-item-renderer .reel-item-metadata {
   opacity: 1 !important;
 }`,
   "hidden-except-hover": `
-ytd-thumbnail, .yt-lockup-view-model-wiz__content-image {
+ytd-thumbnail, .yt-lockup-view-model-wiz__content-image, yt-thumbnail-view-model {
   transition: 0.25s ease-in all;
   overflow: hidden;
-  max-height: 400px;
-  max-width: 360px;
+  max-height: inherit;
+  max-width: inherit;
 }
 
 ytd-rich-item-renderer:not(:hover) ytd-thumbnail,
 ytd-grid-video-renderer:not(:hover) ytd-thumbnail,
 ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 ytd-rich-item-renderer:not(:hover) .yt-lockup-view-model-wiz__content-image,
-ytd-ad-slot-renderer:not(:hover) #media-container.ytd-display-ad-renderer {
+ytd-ad-slot-renderer:not(:hover) #media-container.ytd-display-ad-renderer,
+ytd-rich-item-renderer:not(:hover) yt-thumbnail-view-model,
+ytm-shorts-lockup-view-model:not(:hover) .shortsLockupViewModelHostEndpoint.reel-item-endpoint {
   max-height: 0px !important;
   min-height: 0px !important;
   opacity: 0 !important;
 }
 
-ytd-ad-slot-renderer:not(:hover) #media-container.ytd-display-ad-renderer {
+ytd-ad-slot-renderer:not(:hover) #media-container.ytd-display-ad-renderer,
+ytd-rich-item-renderer:not(:hover) yt-thumbnail-view-model {
   padding: 0 !important;
 }
 
@@ -59,11 +62,11 @@ ytd-playlist-video-renderer:not(:hover) ytd-thumbnail,
 .ytp-videowall-still-info-content {
   opacity: 1 !important;
 }`,
-  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image, ytm-shorts-lockup-view-model .yt-core-image, yt-img-shadow #img, .ytThumbnailViewModelImage .ytCoreImageHost {
+  "blurred": `ytd-thumbnail img, ytd-playlist-thumbnail img, .video-thumbnail-img, .ytp-videowall-still-image, ytm-shorts-lockup-view-model .yt-core-image, yt-img-shadow #img, .ytThumbnailViewModelImage .ytCoreImageHost, .shortsLockupViewModelHostThumbnail {
   filter: blur(16px);
 }`,
   "solid-color": `
-.yt-core-image, .yt-thumbnail-view-model__image, .ytThumbnailViewModelImage .ytCoreImageHost, .ytd-thumbnail .ytCoreImageHost {
+.yt-core-image, .yt-thumbnail-view-model__image, .ytThumbnailViewModelImage .ytCoreImageHost, .ytd-thumbnail .ytCoreImageHost, .shortsLockupViewModelHostThumbnail {
   display: none !important;
 }
 
@@ -74,7 +77,7 @@ ytd-thumbnail.style-scope.ytd-compact-video-renderer {
 
 ytd-thumbnail #thumbnail.ytd-thumbnail, .ytThumbnailViewModelImage, .ytd-thumbnail
 ytm-shorts-lockup-view-model .shortsLockupViewModelHostThumbnailContainer,
-#media-container { 
+#media-container, .shortsLockupViewModelHostThumbnailContainer { 
   background-color: var(--yt-spec-additive-background);
 }
 
