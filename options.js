@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.forms[0].disableWatchPage.checked = options.disabledOnPages.watch;
   document.forms[0].disableSubscriptionsPage.checked = options.disabledOnPages.subscriptions;
   document.forms[0].disableEverywhere.checked = options.disabledOnPages.everywhere;
+  document.forms[0].avatarMode.value = options.avatarMode ?? 'normal';
+  document.forms[0].titleFormat.value = options.titleFormat ?? 'normal';
+  document.forms[0].removeEmojisFromTitles.checked = options.removeEmojisFromTitles ?? false;
 });
 
 // Save on change
@@ -37,6 +40,9 @@ document.forms[0].addEventListener('change', async () => {
       subscriptions: document.forms[0].disableSubscriptionsPage.checked,
       everywhere: document.forms[0].disableEverywhere.checked,
     },
+    avatarMode: document.forms[0].avatarMode.value,
+    titleFormat: document.forms[0].titleFormat.value,
+    removeEmojisFromTitles: document.forms[0].removeEmojisFromTitles.checked,
   })
 
   // Artificial delay, so the 'saving' message actually appears

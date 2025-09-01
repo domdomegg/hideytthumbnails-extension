@@ -4,5 +4,89 @@
   },
   "extDescription": {
     "message": "Ocultar miniaturas do YouTube para navegar melhor"
+  },
+  "options_setting_storage": {
+    "message": "Configuração de armazenamento"
+  },
+  "options_sync": {
+    "message": "Sincronizar configurações entre navegadores"
+  },
+  "options_thumbnail_mode": {
+    "message": "Modo de exibição de miniaturas"
+  },
+  "options_thumbnail_hidden": {
+    "message": "Oculto"
+  },
+  "options_thumbnail_hidden_except_hovered": {
+    "message": "Oculto (exceto quando pairado)"
+  },
+  "options_thumbnail_blurred": {
+    "message": "Desfocado"
+  },
+  "options_thumbnail_solid_color": {
+    "message": "Cor sólida"
+  },
+  "options_thumbnail_normal": {
+    "message": "Normal"
+  },
+  "options_disable_extension_on": {
+    "message": "Desativar extensão em"
+  },
+  "options_disable_extension_results": {
+    "message": "Página de resultados de pesquisa"
+  },
+  "options_disable_extension_channel": {
+    "message": "Página do canal"
+  },
+  "options_disable_extension_playlist": {
+    "message": "Página da playlist"
+  },
+  "options_disable_extension_watch": {
+    "message": "Página de exibição"
+  },
+  "options_disable_extension_subscriptions": {
+    "message": "Página de inscrições"
+  },
+  "options_disable_extension_everywhere": {
+    "message": "Em todo lugar"
+  },
+  "options_loaded": {
+    "message": "Preferências carregadas"
+  },
+  "options_saving": {
+    "message": "Salvando..."
+  },
+  "options_saved": {
+    "message": "Preferências salvas"
+  },
+  "options_hide_avatars": {
+    "message": "Exibição de avatares do canal"
+  },
+  "options_avatar_normal": {
+    "message": "Normal"
+  },
+  "options_avatar_hidden": {
+    "message": "Oculto"
+  },
+  "options_title_format": {
+    "message": "Formato do título do vídeo"
+  },
+  "options_title_format_normal": {
+    "message": "Normal"
+  },
+  "options_title_format_titlecase": {
+    "message": "Primeira Maiúscula"
+  },
+  "options_title_format_lowercase": {
+    "message": "minúsculas"
+  },
+  "options_title_format_uppercase": {
+    "message": "MAIÚSCULAS"
+  },
+  "options_title_format_sentencecase": {
+    "message": "Frase"
+  },
+  "options_remove_emojis_from_titles": {
+    "message": "Remover emojis dos títulos dos vídeos ❤️"
   }
 }

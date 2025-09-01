@@ -58,5 +58,35 @@
   },
   "options_saved": {
     "message": "Saved preferences"
+  },
+  "options_hide_avatars": {
+    "message": "Channel avatars display"
+  },
+  "options_avatar_normal": {
+    "message": "Normal"
+  },
+  "options_avatar_hidden": {
+    "message": "Hidden"
+  },
+  "options_title_format": {
+    "message": "Video title format"
+  },
+  "options_title_format_normal": {
+    "message": "Normal"
+  },
+  "options_title_format_titlecase": {
+    "message": "Title Case"
+  },
+  "options_title_format_lowercase": {
+    "message": "lowercase"
+  },
+  "options_title_format_uppercase": {
+    "message": "UPPERCASE"
+  },
+  "options_title_format_sentencecase": {
+    "message": "Sentence case"
+  },
+  "options_remove_emojis_from_titles": {
+    "message": "Remove emojis from video titles ❤️"
   }
 }
