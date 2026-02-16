@@ -16,6 +16,9 @@ if (typeof globalThis.browser === "undefined") {
  *     subscriptions: boolean,
  *     everywhere: boolean,
  *   },
+ *   avatarMode: 'normal' | 'hidden',
+ *   titleFormat: 'normal' | 'titlecase' | 'lowercase' | 'uppercase' | 'sentencecase',
+ *   removeEmojisFromTitles: boolean,
  * }} Options
  */
 
@@ -31,6 +34,9 @@ const defaultOptions = {
     everywhere: false,
   },
   thumbnailMode: 'hidden',
+  avatarMode: 'normal',
+  titleFormat: 'normal',
+  removeEmojisFromTitles: false,
 }
 
 /**
