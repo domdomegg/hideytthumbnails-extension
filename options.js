@@ -11,14 +11,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Load existing settings
   const options = await loadOptions();
+  //Settings storage
   document.forms[0].syncSettings.checked = options.syncSettings;
+  
+  //Thumbnail mode
   document.forms[0].thumbnailMode.value = options.thumbnailMode;
+  
+  //Disabled pages
   document.forms[0].disableSearchResultPage.checked = options.disabledOnPages.results;
   document.forms[0].disableChannelPage.checked = options.disabledOnPages.channel;
   document.forms[0].disablePlaylistPage.checked = options.disabledOnPages.playlist;
   document.forms[0].disableWatchPage.checked = options.disabledOnPages.watch;
   document.forms[0].disableSubscriptionsPage.checked = options.disabledOnPages.subscriptions;
   document.forms[0].disableEverywhere.checked = options.disabledOnPages.everywhere;
+  
+  //Work Mode
+  document.forms[0].enableWorkMode.checked = options.workMode.enabled;
+  document.forms[0].workModeStart.value = options.workMode.startTime;
+  document.forms[0].workModeEnd.value = options.workMode.endTime;
 });
 
 // Save on change
@@ -36,6 +46,11 @@ document.forms[0].addEventListener('change', async () => {
       watch: document.forms[0].disableWatchPage.checked,
       subscriptions: document.forms[0].disableSubscriptionsPage.checked,
       everywhere: document.forms[0].disableEverywhere.checked,
+    },
+    workMode: {
+      enabled: document.forms[0].enableWorkMode.checked,
+      startTime: document.forms[0].workModeStart.value,
+      endTime: document.forms[0].workModeEnd.value,
     },
   })
 
